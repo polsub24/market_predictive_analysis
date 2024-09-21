@@ -1,38 +1,113 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7; /* light gray background */
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center; /* center align headings */
+  color: #333; /* dark gray text */
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+/* Chart Container Styles */
 
 .chart-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd; /* light gray border */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* white background */
+  width: 50%; /* adjust width to fit your needs */
+  margin: 20px auto; /* center the chart container */
+  position: relative; /* add this for interactive chart */
 }
+
+.chart-container img {
+  width: 100%;
+  height: auto;
+  margin: 20px;
+}
+
+/* Interactive Chart Styles */
+
+.chart-interactive {
+  position: absolute; /* add this for interactive chart */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Prediction Container Styles */
 
 .prediction-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f7f7f7;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd; /* light gray border */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7; /* light gray background */
+  width: 50%; /* adjust width to fit your needs */
+  margin: 20px auto; /* center the prediction container */
 }
 
-h1, h2 {
-    color: #333;
-    margin-bottom: 10px;
+.prediction-container p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #666; /* dark gray text */
+  margin-bottom: 10px;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    margin: 20px;
+/* Slider Styles */
+
+.slider-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd; /* light gray border */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* white background */
+  width: 50%; /* adjust width to fit your needs */
+  margin: 20px auto; /* center the slider container */
 }
 
-p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #666;
+.slider {
+  width: 100%;
+  height: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #ccc; /* light gray background */
+}
+
+/* Responsive Design */
+
+@media only screen and (max-width: 768px) {
+  .chart-container, .prediction-container, .slider-container {
+    width: 80%; /* adjust width for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .chart-container, .prediction-container, .slider-container {
+    width: 90%; /* adjust width for smaller screens */
+  }
 }
