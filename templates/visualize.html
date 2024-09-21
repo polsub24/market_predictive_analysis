@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Market Predictive Analysis</title>
-  </head>
-  <body>
-    <h1>Market Predictive Analysis</h1>
-    <img src="{{ bar_chart }}" alt="Bar Chart">
-    <img src="{{ scatter_plot }}" alt="Scatter Plot">
-  </body>
+<head>
+    <title>Innovation Data Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Innovation Data Visualization</h1>
+    <div class="chart-container">
+        <h2>Total R&D Spend by Company</h2>
+        <img src="{{ bar_chart }}" alt="Bar Chart">
+    </div>
+    <div class="chart-container">
+        <h2>Relationship Between Market Share and Product Launch Success</h2>
+        <img src="{{ scatter_plot }}" alt="Scatter Plot">
+    </div>
+</body>
 </html>

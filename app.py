@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 # Load innovation data
 innovation_data = pd.read_csv('data/innovation_data.csv')
@@ -33,7 +33,6 @@ def visualize():
     return render_template('visualize.html', 
                            bar_chart=url_for('static', filename='bar_chart.png'), 
                            scatter_plot=url_for('static', filename='scatter_plot.png'))
-
 
 if __name__ == '__main__':
     app.run(debug=True)
