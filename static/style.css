@@ -4,14 +4,33 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('new.png'); /* Set the uploaded image as background */
+    background-image: url('https://steamuserimages-a.akamaihd.net/ugc/919174772921005938/7F7B796630528B63111AAB8B950D9F358CAC4219/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false'); /* Set the uploaded image as background */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: #ecf0f1; /* Light text for readability */
-  }
-  
-  .dashboard {
+}
+
+header {
+    background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent background for contrast */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #ecf0f1;
+    font-size: 24px;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.dashboard {
     max-width: 1200px;
     margin: 40px auto;
     padding: 40px;
@@ -20,42 +39,88 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     font-size: 16px;
     line-height: 1.7;
+    text-align: center;
     color: #ecf0f1;
     transition: background-color 0.3s ease;
-  }
-  
-  .dashboard:hover {
+}
+
+.dashboard:hover {
     background-color: rgba(52, 73, 94, 0.8); /* Hover effect for dashboard */
-  }
-  
-  .dashboard ul {
+}
+
+.dashboard ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex; /* Add flexbox to display links horizontally */
     justify-content: space-between; /* Distribute links evenly */
     flex-wrap: wrap; /* Allow links to wrap to next line if necessary */
-  }
-  
-  .dashboard li {
+}
+
+.dashboard li {
     margin-bottom: 15px;
     margin-right: 20px; /* Add space between links */
-  }
-  
-  .dashboard a {
+}
+
+.dashboard a {
     text-decoration: none;
     color: #1abc9c; /* Accent color for links */
     font-weight: bold;
     transition: color 0.3s ease;
-  }
-  
-  .dashboard a:hover {
+}
+
+.dashboard a:hover {
     color: #16a085; /* Slight hover effect for links */
     text-decoration: underline;
-  }
-  
-  /* Chart Container Styling */
-  .chart-container {
+}
+
+.about-us {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: rgba(231, 76, 60, 0.8); /* Semi-transparent for accent */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: left;
+    color: #ecf0f1;
+    transition: transform 0.3s ease;
+}
+
+.about-us:hover {
+    transform: scale(1.05); /* Subtle scale effect */
+}
+
+.about-us h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    margin-bottom: 20px;
+}
+
+.about-us ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-us li {
+    margin-bottom: 10px;
+}
+
+.about-us li:before {
+    content: "\2022"; /* Add bullet points */
+    color: #1abc9c;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* Chart Container Styling */
+.chart-container {
     margin: 40px auto;
     padding: 30px;
     border-radius: 15px;
@@ -63,21 +128,21 @@ body {
     background-color: rgba(243, 156, 18, 0.8); /* Semi-transparent background */
     width: 60%;
     transition: transform 0.3s ease;
-  }
-  
-  .chart-container:hover {
+}
+
+.chart-container:hover {
     transform: scale(1.05); /* Subtle scale effect */
-  }
-  
-  #bar-chart, #scatter-plot {
+}
+
+#bar-chart, #scatter-plot {
     max-width: 50%; /* Reduce the size of the plots */
     margin: 20px auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-  }
-  
-  /* Prediction Container Styling */
-  .prediction-container {
+}
+
+/* Prediction Container Styling */
+.prediction-container {
     margin: 40px auto;
     padding: 30px;
     border-radius: 15px;
@@ -85,21 +150,21 @@ body {
     background-color: rgba(231, 76, 60, 0.8); /* Semi-transparent for accent */
     width: 60%;
     transition: transform 0.3s ease;
-  }
-  
-  .prediction-container:hover {
+}
+
+.prediction-container:hover {
     transform: scale(1.05); /* Subtle scale effect */
-  }
-  
-  #prediction-result {
+}
+
+#prediction-result {
     font-size: 26px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 15px;
-  }
-  
-  /* Start Button Styling */
-  .start-button {
+}
+
+/* Start Button Styling */
+.start-button {
     display: block;
     width: 200px;
     margin: 30px auto;
@@ -111,25 +176,25 @@ body {
     border-radius: 50px;
     text-decoration: none;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .start-button:hover {
+}
+
+.start-button:hover {
     background-color: #16a085;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Hover effect */
-  }
-  
-  /* Responsive Design for Smaller Screens */
-  @media (max-width: 768px) {
-    .dashboard, .chart-container, .prediction-container {
-      width: 90%;
-      padding: 20px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 800px) {
+    .dashboard, .chart-container, .prediction-container, .about-us {
+        width: 90%;
+        padding: 20px;
     }
-  
+
     #bar-chart, #scatter-plot {
-      max-width: 50%; /* Reduce the size of the plots */
+        max-width: 50%; /* Reduce the size of the plots */
     }
-  
+
     #prediction-result {
-      font-size: 22px;
+        font-size: 22px;
     }
-  }
+}
