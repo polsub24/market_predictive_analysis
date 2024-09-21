@@ -22,8 +22,6 @@ body {
     line-height: 1.7;
     color: #ecf0f1;
     transition: background-color 0.3s ease;
-    display: flex; /* Add flexbox to display links horizontally */
-    justify-content: space-between; /* Distribute links evenly */
   }
   
   .dashboard:hover {
@@ -36,10 +34,12 @@ body {
     margin: 0;
     display: flex; /* Add flexbox to display links horizontally */
     justify-content: space-between; /* Distribute links evenly */
+    flex-wrap: wrap; /* Allow links to wrap to next line if necessary */
   }
   
   .dashboard li {
     margin-bottom: 15px;
+    margin-right: 20px; /* Add space between links */
   }
   
   .dashboard a {
