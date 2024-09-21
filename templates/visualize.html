@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Innovation Data Visualization</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualize Data</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Innovation Data Visualization</h1>
-    <div class="chart-container">
-        <h2>Total R&D Spend by Company</h2>
-        <img src="{{ bar_chart }}" alt="Bar Chart">
-    </div>
-    <div class="chart-container">
-        <h2>Relationship Between Market Share and Product Launch Success</h2>
-        <img src="{{ scatter_plot }}" alt="Scatter Plot">
-    </div>
-    <div class="prediction-container">
-        <h2>Best Company for Innovation:</h2>
-        <p>{{ best_company_name }}</p>
-    </div>
+  <header>
+    <h1>Visualize Data</h1>
+  </header>
+  <main>
+    <section class="chart-container">
+        <h2>Bar Chart</h2>
+        <img src="{{ bar_chart_url }}" alt="Bar Chart">
+    </section>
+      
+    <section class="chart-container">
+        <h2>Scatter Plot</h2>
+        <img src="{{ scatter_plot_url }}" alt="Scatter Plot">
+    </section>
+  </main>
 </body>
 </html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovation Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Innovation Prediction</h1>
+  </header>
+  <main>
+    <section class="prediction-container">
+        <h2>Best Company for Innovation Prediction</h2>
+        <p id="prediction-result">{{ prediction }}</p>
+    </section>
+  </main>
+</body>
+</html>

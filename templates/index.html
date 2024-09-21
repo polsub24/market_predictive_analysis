@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovation Predictive Analysis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Innovation Predictive Analysis</h1>
+  </header>
+  <main>
+    <section class="dashboard">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{ url_for('visualize') }}">Visualization of Data</a></li>
+        <li><a href="{{ url_for('predict') }}">Innovation Prediction</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

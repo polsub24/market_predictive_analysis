@@ -17,6 +17,10 @@ model = LinearRegression()
 model.fit(X, y)
 
 @app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/visualize')
 def visualize():
     # Create the bar chart
     plt.switch_backend('Agg')  # Switch to Agg backend
@@ -38,15 +42,21 @@ def visualize():
     plt.savefig('static/scatter_plot.png')
     plt.close(fig)  # Close the figure
 
+    bar_chart_url = url_for('static', filename='bar_chart.png')
+    scatter_plot_url = url_for('static', filename='scatter_plot.png')
+
+    return render_template('visualize.html', 
+                           bar_chart_url=bar_chart_url, 
+                           scatter_plot_url=scatter_plot_url)
+
+
+@app.route('/predict')
+def predict():
     # Predict the best company for innovation
     predicted_innovation_scores = model.predict(X)
     best_company_index = predicted_innovation_scores.argmax()
     best_company_name = innovation_data.iloc[best_company_index]['company_name']
-
-    return render_template('visualize.html', 
-                           bar_chart=url_for('static', filename='bar_chart.png'), 
-                           scatter_plot=url_for('static', filename='scatter_plot.png'),
-                           best_company_name=best_company_name)
+    return render_template('predict.html', prediction=best_company_name)
 
 if __name__ == '__main__':
     app.run(debug=True)
