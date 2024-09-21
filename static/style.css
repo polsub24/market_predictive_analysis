@@ -1,61 +1,135 @@
-.dashboard {
-    max-width: 800px;
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('new.png'); /* Set the uploaded image as background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ecf0f1; /* Light text for readability */
+  }
+  
+  .dashboard {
+    max-width: 1200px;
     margin: 40px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f7f7f7;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent background for contrast */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    line-height: 1.7;
+    color: #ecf0f1;
+    transition: background-color 0.3s ease;
+    display: flex; /* Add flexbox to display links horizontally */
+    justify-content: space-between; /* Distribute links evenly */
+  }
+  
+  .dashboard:hover {
+    background-color: rgba(52, 73, 94, 0.8); /* Hover effect for dashboard */
   }
   
   .dashboard ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex; /* Add flexbox to display links horizontally */
+    justify-content: space-between; /* Distribute links evenly */
   }
   
   .dashboard li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   
   .dashboard a {
     text-decoration: none;
-    color: #337ab7;
+    color: #1abc9c; /* Accent color for links */
+    font-weight: bold;
+    transition: color 0.3s ease;
   }
   
   .dashboard a:hover {
-    color: #23527c;
+    color: #16a085; /* Slight hover effect for links */
+    text-decoration: underline;
   }
+  
+  /* Chart Container Styling */
   .chart-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    width: 50%;
-    margin: 20px auto;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(243, 156, 18, 0.8); /* Semi-transparent background */
+    width: 60%;
+    transition: transform 0.3s ease;
+  }
+  
+  .chart-container:hover {
+    transform: scale(1.05); /* Subtle scale effect */
   }
   
   #bar-chart, #scatter-plot {
-    max-width: 200px;
-    margin: 20px;
-  }
-
-  .prediction-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f7f7f7;
-    width: 50%;
+    max-width: 50%; /* Reduce the size of the plots */
     margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+  }
+  
+  /* Prediction Container Styling */
+  .prediction-container {
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(231, 76, 60, 0.8); /* Semi-transparent for accent */
+    width: 60%;
+    transition: transform 0.3s ease;
+  }
+  
+  .prediction-container:hover {
+    transform: scale(1.05); /* Subtle scale effect */
   }
   
   #prediction-result {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    color: #666;
-    margin-bottom: 10px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+  /* Start Button Styling */
+  .start-button {
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    padding: 15px;
+    background-color: #1abc9c; /* Primary button color */
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .start-button:hover {
+    background-color: #16a085;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Hover effect */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .dashboard, .chart-container, .prediction-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    #bar-chart, #scatter-plot {
+      max-width: 50%; /* Reduce the size of the plots */
+    }
+  
+    #prediction-result {
+      font-size: 22px;
+    }
   }
