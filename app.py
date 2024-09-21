@@ -32,18 +32,18 @@ def visualize():
     plt.savefig('static/bar_chart.png')
     plt.close(fig)  # Close the figure
 
-    # Create the scatter plot
+    # Create the line plot
     plt.switch_backend('Agg')  # Switch to Agg backend
     fig = plt.figure(figsize=(10, 6))
-    sns.scatterplot(x='market_share', y='product_launch_success', data=innovation_data)
+    sns.lineplot(x='market_share', y='product_launch_success', data=innovation_data)
     plt.title('Relationship Between Market Share and Product Launch Success')
     plt.xlabel('Market Share (%)')
     plt.ylabel('Product Launch Success (%)')
-    plt.savefig('static/scatter_plot.png')
+    plt.savefig('static/line_plot.png')
     plt.close(fig)  # Close the figure
 
     bar_chart_url = url_for('static', filename='bar_chart.png')
-    scatter_plot_url = url_for('static', filename='scatter_plot.png')
+    scatter_plot_url = url_for('static', filename='line_plot.png')
 
     return render_template('visualize.html', 
                            bar_chart_url=bar_chart_url, 
@@ -56,7 +56,7 @@ def predict():
     predicted_innovation_scores = model.predict(X)
     best_company_index = predicted_innovation_scores.argmax()
     best_company_name = innovation_data.iloc[best_company_index]['company_name']
-    return render_template('predict.html', prediction=best_company_name)
+    return render_template('predict.html', prediction=best_company_name, market_share=innovation_data.iloc[best_company_index]['market_share'])
 
 if __name__ == '__main__':
     app.run(debug=True)
